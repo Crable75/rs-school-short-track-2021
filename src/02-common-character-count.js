@@ -11,12 +11,11 @@
  */
 function getCommonCharacterCount(s1, s2) {
   let sum = 0;
-  let set = new Set();
-  let arrS1 = s1.split('');
-  let arrS2 = s2.split('');
-
+  const set = new Set();
+  const arrS1 = s1.split('');
+  const arrS2 = s2.split('');
   for (let item of arrS1) {
-    if (arrS2.includes(item)) set.add(item)
+    if (arrS2.includes(item)) set.add(item);
   }
 
   for (let item of set) {
