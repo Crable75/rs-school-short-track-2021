@@ -6,14 +6,14 @@
  * whether it's a MAC-48 address or not.
  *
  * @param {Number} inputString
- * @return {Number}
+ * @return {boolean}
  *
  * @example
  * For 00-1B-63-84-45-E6, the output should be true.
  *
  */
-function isMAC48Address(n) {
-  return /^[0-9a-f]{1,2}([.:-])(?:[0-9a-f]{1,2}\1){4}[0-9a-f]{1,2}$/gmi.test(n);
+function isMAC48Address(inputString) {
+  return /^[0-9a-f]{1,2}([.:-])(?:[0-9a-f]{1,2}\1){4}[0-9a-f]{1,2}$/gmi.test(inputString);
 }
 
 module.exports = isMAC48Address;

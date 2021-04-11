@@ -16,16 +16,16 @@
  *   this.next = null;
  * }
  */
-
 function removeKFromList(l, k) {
-  for (var i = l.length; i--;) {
-    if (l[i] === k) {
-      l.splice(i, 1);
-    }
+  let tmp = l;
+  if (tmp.value === 3) tmp = tmp.next;
+  const link = tmp;
+  while (tmp.next !== null) {
+    if (tmp.next.value === k) tmp.next = tmp.next.next;
+    tmp = tmp.next;
   }
-  return l;
+
+  return link;
 }
 
 module.exports = removeKFromList;
-//
-// console.log(removeKFromList([2, 1, 2, 3, 4, 5], 3));

@@ -14,17 +14,18 @@
  *
  */
 function renameFiles(names) {
-  for (let i = 0; i < names.length; i++) {
+  let res = names;
+  for (let i = 0; i < res.length; i++) {
     let idx = 0;
-    names = names.map((item, index) => {
-      if (index > i && item === names[i]) {
+    res = res.map((item, index) => {
+      if (index > i && item === res[i]) {
         idx++;
         return `${item}(${idx})`;
       }
       return item;
     });
   }
-  return names;
+  return res;
 }
 
 module.exports = renameFiles;

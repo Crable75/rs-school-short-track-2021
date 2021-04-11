@@ -12,13 +12,14 @@
  */
 function getSumOfDigits(n) {
   let sum = 0;
-  while (n > 9) {
-    let arr = n.toString().split('');
-    arr.forEach((item) => sum += parseInt(item, 10));
-    n = sum;
+  let number = n;
+  while (number > 9) {
+    const arr = number.toString().split('');
+    sum += arr.reduce((acc, item) => acc + parseInt(item, 10), 0);
+    number = sum;
     sum = 0;
   }
-  return n;
+  return number;
 }
 
 module.exports = getSumOfDigits;

@@ -22,45 +22,49 @@
  * ]
  */
 function minesweeper(matrix) {
-
-  for (let i = 0; i < matrix.length; i++) {
-    matrix[i] = matrix[i].map((item) => (item === true ? item : 0));
+  const mtrx = matrix;
+  for (let i = 0; i < mtrx.length; i++) {
+    mtrx[i] = mtrx[i].map((item) => (item === true ? item : 0));
   }
 
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      if (matrix[i][j] === true) {
-        if (matrix[i-1] !== undefined && matrix[i-1][j] !== true) {
-          matrix[i-1][j] = matrix[i-1][j] + 1;
+  for (let i = 0; i < mtrx.length; i++) {
+    for (let j = 0; j < mtrx[i].length; j++) {
+      if (mtrx[i][j] === true) {
+        if (mtrx[i - 1] !== undefined && mtrx[i - 1][j] !== true) {
+          mtrx[i - 1][j] = mtrx[i - 1][j] + 1;
         }
-        if (matrix[i+1] !== undefined && matrix[i+1][j] !== true) {
-          matrix[i+1][j] = matrix[i+1][j] + 1;
+        if (mtrx[i + 1] !== undefined && mtrx[i + 1][j] !== true) {
+          mtrx[i + 1][j] = mtrx[i + 1][j] + 1;
         }
-        if (matrix[i][j-1] !== undefined && matrix[i][j-1] !== true) {
-          matrix[i][j-1] = matrix[i][j-1] + 1;
+        if (mtrx[i][j - 1] !== undefined && mtrx[i][j - 1] !== true) {
+          mtrx[i][j - 1] = mtrx[i][j - 1] + 1;
         }
-        if (matrix[i][j+1] !== undefined && matrix[i][j+1] !== true) {
-          matrix[i][j+1] = matrix[i][j+1] + 1;
+        if (mtrx[i][j + 1] !== undefined && mtrx[i][j + 1] !== true) {
+          mtrx[i][j + 1] = mtrx[i][j + 1] + 1;
         }
-        if (matrix[i-1] !== undefined && matrix[i][j-1] !== undefined && matrix[i-1][j-1] !== true) {
-          matrix[i-1][j-1] = matrix[i-1][j-1] + 1;
+        if (mtrx[i - 1] !== undefined && mtrx[i][j - 1] !== undefined
+          && mtrx[i - 1][j - 1] !== true) {
+          mtrx[i - 1][j - 1] = mtrx[i - 1][j - 1] + 1;
         }
-        if (matrix[i+1] !== undefined && matrix[i][j+1] !== undefined && matrix[i+1][j+1] !== true) {
-          matrix[i+1][j+1] = matrix[i+1][j+1] + 1;
+        if (mtrx[i + 1] !== undefined && mtrx[i][j + 1] !== undefined
+          && mtrx[i + 1][j + 1] !== true) {
+          mtrx[i + 1][j + 1] = mtrx[i + 1][j + 1] + 1;
         }
-        if (matrix[i-1] !== undefined && matrix[i][j+1] !== undefined && matrix[i-1][j+1] !== true) {
-          matrix[i-1][j+1] = matrix[i-1][j+1] + 1;
+        if (mtrx[i - 1] !== undefined && mtrx[i][j + 1] !== undefined
+          && mtrx[i - 1][j + 1] !== true) {
+          mtrx[i - 1][j + 1] = mtrx[i - 1][j + 1] + 1;
         }
-        if (matrix[i+1] !== undefined && matrix[i][j-1] !== undefined && matrix[i+1][j-1] !== true) {
-          matrix[i+1][j-1] = matrix[i+1][j-1] + 1;
+        if (mtrx[i + 1] !== undefined && mtrx[i][j - 1] !== undefined
+          && mtrx[i + 1][j - 1] !== true) {
+          mtrx[i + 1][j - 1] = mtrx[i + 1][j - 1] + 1;
         }
       }
     }
   }
-  for (let i = 0; i < matrix.length; i++) {
-    matrix[i] = matrix[i].map((item) => (item === true ? 1 : item));
+  for (let i = 0; i < mtrx.length; i++) {
+    mtrx[i] = mtrx[i].map((item) => (item === true ? 1 : item));
   }
-  return matrix;
+  return mtrx;
 }
 
 module.exports = minesweeper;
