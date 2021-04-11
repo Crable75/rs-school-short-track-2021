@@ -17,6 +17,7 @@ function renameFiles(names) {
   let res = names;
   for (let i = 0; i < res.length; i++) {
     let idx = 0;
+    // eslint-disable-next-line no-loop-func
     res = res.map((item, index) => {
       if (index > i && item === res[i]) {
         idx++;
